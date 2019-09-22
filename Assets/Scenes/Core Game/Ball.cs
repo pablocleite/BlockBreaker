@@ -42,4 +42,12 @@ public class Ball : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 10f);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (launched == true)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
