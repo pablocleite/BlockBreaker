@@ -6,6 +6,9 @@ public class Ball : MonoBehaviour
 {
 
     [SerializeField] Paddle paddle1;
+    [SerializeField] AudioClip[] soundFX;
+
+    private AudioSource audioSource;
 
     Vector2 paddleToBallBehavior;
     bool launched;
@@ -15,6 +18,7 @@ public class Ball : MonoBehaviour
     {
         launched = false;
         paddleToBallBehavior = transform.position - paddle1.transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,9 +49,10 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (launched == true)
+        if (launched)
         {
-            GetComponent<AudioSource>().Play();
+            AudioClip clip = soundFX[Random.Range(0, soundFX.Length)];
+            audioSource.PlayOneShot(clip);
         }
     }
 }
