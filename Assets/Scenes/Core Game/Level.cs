@@ -6,12 +6,12 @@ public class Level : MonoBehaviour
     private int breakableBlocks;
 
     private SceneLoader sceneLoader;
-    private GameStatus gameStatus;
+    private GameSession gameStatus;
 
     private void Start()
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
-        gameStatus = FindObjectOfType<GameStatus>();
+        gameStatus = FindObjectOfType<GameSession>();
     }
 
 

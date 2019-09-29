@@ -5745,7 +5745,7 @@ PrefabInstance:
     - target: {fileID: 5713791865675516196, guid: 04e999f829a474a80b57cbe1e9a6c634,
         type: 3}
       propertyPath: m_Name
-      value: GameStatus
+      value: GameSession
       objectReference: {fileID: 0}
     - target: {fileID: 3263617386869109542, guid: 04e999f829a474a80b57cbe1e9a6c634,
         type: 3}
@@ -5800,16 +5800,6 @@ PrefabInstance:
     - target: {fileID: 3263617386869109542, guid: 04e999f829a474a80b57cbe1e9a6c634,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5186957338958603717, guid: 04e999f829a474a80b57cbe1e9a6c634,
-        type: 3}
-      propertyPath: gameSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224668842253314559, guid: 04e999f829a474a80b57cbe1e9a6c634,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
