@@ -10,18 +10,28 @@ public class Block : MonoBehaviour {
 
     private void Start()
     {
+        if (tag == "Unbreakable") { return; }
+
         level = FindObjectOfType<Level>();
-        level.BlockAdded();
+        level.BreakableBlockAdded();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+
+        if (tag == "Unbreakable") { return; }
+
+        DestroyBlock();
+    }
+
+    private void DestroyBlock()
     {
         level.BlockDestroyed();
         AudioSource.PlayClipAtPoint(destructionSoundFX, Camera.main.transform.position);
         TriggerSparklesVFX();
 
         Destroy(gameObject);
-        Debug.Log(collision.gameObject.name);
     }
 
     private void TriggerSparklesVFX()

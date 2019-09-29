@@ -15,7 +15,7 @@ public class Level : MonoBehaviour
     }
 
 
-    public void BlockAdded()
+    public void BreakableBlockAdded()
     {
         breakableBlocks++;
     }
