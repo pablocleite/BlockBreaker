@@ -13,7 +13,21 @@ public class GameStatus : MonoBehaviour
     [SerializeField] int score = 0;
 
     private const string scoreTextMask = "SCORE: {0}";
-    
+
+    private void Awake()
+    {
+        //This is a very weird Singleton pattern code.
+        if (FindObjectsOfType<GameStatus>().Length > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 
     private void Update()
     {
