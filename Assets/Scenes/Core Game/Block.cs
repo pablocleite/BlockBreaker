@@ -6,13 +6,23 @@ public class Block : MonoBehaviour {
 
     [SerializeField] AudioClip destructionSoundFX;
     [SerializeField] GameObject blockSparklesVFX;
+    [SerializeField] Sprite[] hitSprites;
+
+    [Range(1, 3)] [SerializeField] int maxHits;
+
+    //State vars
+    [SerializeField] int timesHit;
+
     private Level level;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         if (tag == "Unbreakable") { return; }
 
         level = FindObjectOfType<Level>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         level.BreakableBlockAdded();
     }
 
@@ -22,7 +32,21 @@ public class Block : MonoBehaviour {
 
         if (tag == "Unbreakable") { return; }
 
-        DestroyBlock();
+        timesHit++;
+
+        if (timesHit >= maxHits)
+        {
+            DestroyBlock();
+        }
+        else
+        {
+            ShowNextHitSprite();
+        }
+    }
+
+    private void ShowNextHitSprite()
+    {
+        spriteRenderer.sprite = hitSprites[timesHit];
     }
 
     private void DestroyBlock()
