@@ -133,11 +133,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle1: {fileID: 0}
+  xPush: 0
+  yPush: 13
   soundFX:
   - {fileID: 8300000, guid: f76e357dddace43fd9bc9ad6c32c4f40, type: 3}
   - {fileID: 8300000, guid: 39ac8370c319b484ab2cf52643db5dd6, type: 3}
   - {fileID: 8300000, guid: f4c8818ddd20d4eef85b2c35f3b93773, type: 3}
   - {fileID: 8300000, guid: 4199920c121444ab6b8b190562fed6c3, type: 3}
+  movementRandomFactor: 0.8
 --- !u!82 &1618988274
 AudioSource:
   m_ObjectHideFlags: 0
