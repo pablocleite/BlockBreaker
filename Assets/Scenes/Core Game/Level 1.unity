@@ -5978,6 +5978,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5186957338958603717, guid: 04e999f829a474a80b57cbe1e9a6c634,
+        type: 3}
+      propertyPath: isAutoPlayEnabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e999f829a474a80b57cbe1e9a6c634, type: 3}
 --- !u!1001 &5385109198946946967
