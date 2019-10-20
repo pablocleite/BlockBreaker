@@ -145,7 +145,4 @@ MonoBehaviour:
   blockSparklesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 98d85cda13c9841d1aaad887494c960b, type: 3}
-  - {fileID: 21300000, guid: 7570dc52d46b243b9a1d2a77919db195, type: 3}
-  - {fileID: 21300000, guid: 3337e130113a741fe89832db8a06fdd7, type: 3}
-  maxHits: 1
   timesHit: 0

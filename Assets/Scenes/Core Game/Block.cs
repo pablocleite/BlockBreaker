@@ -8,8 +8,6 @@ public class Block : MonoBehaviour {
     [SerializeField] GameObject blockSparklesVFX;
     [SerializeField] Sprite[] hitSprites;
 
-    [Range(1, 3)] [SerializeField] int maxHits;
-
     //State vars
     [SerializeField] int timesHit;
 
@@ -34,6 +32,8 @@ public class Block : MonoBehaviour {
 
         timesHit++;
 
+        int maxHits = hitSprites.Length;
+
         if (timesHit >= maxHits)
         {
             DestroyBlock();
@@ -46,7 +46,14 @@ public class Block : MonoBehaviour {
 
     private void ShowNextHitSprite()
     {
-        spriteRenderer.sprite = hitSprites[timesHit];
+        if (hitSprites[timesHit] !=  null)
+        {
+            spriteRenderer.sprite = hitSprites[timesHit];
+        }
+        else
+        {
+            Debug.Log("Unable to select block (" + gameObject.name + ") sprite at index: " + timesHit);
+        }
     }
 
     private void DestroyBlock()
